@@ -1,6 +1,6 @@
 
 resource "aws_lambda_function" "terraform_lambda_function" {
-filename                       = "hello-python."
+filename                       = "code.py"
 function_name                  = "Test_Lambda_Function"
 role                           = aws_iam_role.lambda.arn
 handler                        = "index.lambda_handler"
