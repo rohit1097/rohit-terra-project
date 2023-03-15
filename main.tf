@@ -1,3 +1,11 @@
+terraform {
+  backend "s3" {
+    bucket         = "3.devops.candidate.exam"
+    key            = "rohit.patil"
+    region         = "eu-west-1"
+  }
+}
+
 #PRIVATE SUBNETS
 resource "aws_subnet" "private-subnet-1" {
   vpc_id     = "vpc-0de2bfe0f5fc540e0"
