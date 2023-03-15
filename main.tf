@@ -3,7 +3,7 @@ resource "aws_subnet" "private-subnet-1" {
   vpc_id     = "vpc-0de2bfe0f5fc540e0"
   map_public_ip_on_launch = false
   cidr_block = "10.0.1.0/24"
-  nat-id = "nat-07863fc48f5b99110"
+  nat_gateway_id = "nat-07863fc48f5b99110"
 
   tags = {
     Name = "private-subent-1"
@@ -17,8 +17,8 @@ resource "aws_route_table" "route-private" {
   vpc_id = "vpc-0de2bfe0f5fc540e0"
 
   route {
-    cidr_block = "10.0.0.0/0"
-    gateway_id = "nat-07863fc48f5b99110"
+    cidr_block = "10.0.0.0/16"
+    nat_gateway_id = "nat-07863fc48f5b99110"
   }
 
   tags = {
